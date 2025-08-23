@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
   return (
-    <section id="home" className="pt-20 min-h-screen flex items-center justify-center relative">
+    <section id="inicio" className="pt-20 min-h-screen flex items-center justify-center relative">
       <div className="absolute inset-0 bg-gradient-to-b from-green-900/10 via-black to-black" />
       
       {/* Animated background circles */}

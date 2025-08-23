@@ -61,4 +61,4 @@ export const codeSnippets = [
   'console.log', 'fetch', 'Promise', 'then', 'catch', 'try', 'finally'
 ];
 
-export const navigationItems = ['Home', 'Projects', 'Skills', 'Contact'];
+export const navigationItems = ['Inicio', 'Proyectos', 'Habilidades', 'Contacto'];

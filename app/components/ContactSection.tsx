@@ -7,7 +7,7 @@ import AnimatedDiv from './AnimatedDiv';
 
 const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-12 sm:py-20">
+    <section id="contacto" className="py-12 sm:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <AnimatedDiv direction="up" delay={2}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">Conectemos</h2>

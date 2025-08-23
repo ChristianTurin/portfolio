@@ -19,7 +19,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   handlePlayPause
 }) => {
   return (
-    <section id="projects" className="py-12 sm:py-20">
+    <section id="proyectos" className="py-12 sm:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <AnimatedDiv direction="up" delay={2}>
           <div className="mb-8 sm:mb-12 text-center sm:text-left">

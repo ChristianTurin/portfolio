@@ -8,7 +8,7 @@ import { skills } from '../data/portfolio';
 
 const SkillsSection: React.FC = () => {
   return (
-    <section id="skills" className="py-12 sm:py-20 bg-gray-900/30">
+    <section id="habilidades" className="py-12 sm:py-20 bg-gray-900/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <AnimatedDiv direction="up" delay={2}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center">Habilidades</h2>
