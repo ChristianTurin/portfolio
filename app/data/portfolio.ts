@@ -4,13 +4,13 @@ import { Project, Skill } from '../types';
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Portafolio Web",
     artist: "Full Stack Development",
-    duration: "React, Node.js, MongoDB",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=300&fit=crop",
-    description: "Plataforma completa de comercio electrónico con sistema de pagos",
+    duration: "React, Node.js, Next.js, Git, GitHub",
+    image: "/images/projects/portfolio.png", // ← Cambio aquí
+    description: "Portafolio personal profesional",
     github: "#",
-    demo: "#"
+    demo: "https://kaiserdevs.com/"
   },
   {
     id: 2,
@@ -45,12 +45,22 @@ export const projects: Project[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "React", level: 95 },
-  { name: "JavaScript", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "Python", level: 75 },
-  { name: "MongoDB", level: 70 }
+  { name: "React", level: 65 },
+  { name: "JavaScript", level: 55 },
+  { name: "TypeScript", level: 55 },
+  { name: "Node.js", level: 40 },
+  { name: "Python", level: 45 },
+  { name: "Workbench Mysql", level: 70 },
+  { name: "PHP", level: 70 },
+  { name: "Java", level: 50 },
+  { name: "Git", level: 75 },
+  { name: "Flutter", level: 60 },
+  { name: "Kotlin", level: 50 },
+  { name: "Laravel", level: 30 },
+  { name: "Electron", level: 65 },
+  { name: "Wordpress", level: 60 },
+  { name: "Mysql", level: 60 },
+  { name: "Firebase", level: 60 },
 ];
 
 export const codeSnippets = [

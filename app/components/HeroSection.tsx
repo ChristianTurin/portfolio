@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { ChevronDown, Download } from 'lucide-react';
+import Image from 'next/image';
 import AnimatedDiv from './AnimatedDiv';
 
 interface HeroSectionProps {
@@ -13,7 +14,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
   return (
     <section id="inicio" className="pt-20 min-h-screen flex items-center justify-center relative">
       <div className="absolute inset-0 bg-gradient-to-b from-green-900/10 via-black to-black" />
-      
+
       {/* Animated background circles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-green-500/5 rounded-full blur-3xl animate-pulse" />
@@ -23,9 +24,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <AnimatedDiv direction="up" delay={4}>
           <div className="mb-6 sm:mb-8">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br from-green-400 to-green-600 p-1 hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                <span className="text-2xl sm:text-3xl font-bold text-green-400">CT</span>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br from-green-400 to-green-600 p-1 hover:scale-105 transition-transform duration-300 shadow-lg shadow-green-500/25">
+              <div className="w-full h-full rounded-full bg-black overflow-hidden flex items-center justify-center relative">
+                {/* Foto de perfil */}
+                <Image
+                  src="/images/profile/christian-turin.png"
+                  alt="Christian Turin - Full Stack Developer"
+                  width={100}
+                  height={100}
+                  className="w-full h-full object-cover rounded-full"
+                  priority
+                  onError={(e) => {
+                    // Fallback si la imagen no carga
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                {/* Fallback - se muestra si la imagen falla */}
+                <span 
+                  className="text-2xl sm:text-3xl font-bold text-green-400 absolute inset-0 flex items-center justify-center"
+                  style={{ display: 'none' }}
+                  onLoad={(e) => {
+                    // Si la imagen de arriba falla, muestra esto
+                    const img = e.currentTarget.previousElementSibling as HTMLImageElement;
+                    if (img && img.style.display === 'none') {
+                      e.currentTarget.style.display = 'flex';
+                    }
+                  }}
+                >
+                  CT
+                </span>
               </div>
             </div>
           </div>
@@ -52,8 +79,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
               Ver Mi Trabajo
             </button>
             <a
-              href="/cv.pdf"
-              download="Tu_Nombre_CV.pdf"
+              href="/documents/Christian_Turin_CV.pdf"
+              download="Christian_Turin_Full_Stack_Developer.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-2 border border-green-500 text-green-400 hover:bg-green-500 hover:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105"
             >
               <Download className="w-5 h-5" />
