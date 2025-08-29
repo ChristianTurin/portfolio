@@ -46,7 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
         <AnimatedDiv direction="up" delay={10}>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button 
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection('proyectos')}
               className="bg-green-500 hover:bg-green-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 hover:shadow-2xl"
             >
               Ver Mi Trabajo
