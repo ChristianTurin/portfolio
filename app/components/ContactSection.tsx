@@ -58,22 +58,28 @@ const ContactSection: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus({ type: 'loading', message: 'Enviando mensaje...' });
+// En ContactSection.tsx - actualizar solo la función handleSubmit
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setFormStatus({ type: 'loading', message: 'Enviando mensaje...' });
 
-    try {
-      // Simulate API call - replace with your actual form handling
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Here you would normally send the form data to your backend/email service
-      console.log('Form data:', formData);
-      
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
       setFormStatus({ 
         type: 'success', 
         message: '¡Mensaje enviado correctamente! Te responderé dentro de 24 horas.' 
       });
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -83,13 +89,17 @@ const ContactSection: React.FC = () => {
         budget: '',
         timeline: ''
       });
-    } catch (error) {
-      setFormStatus({ 
-        type: 'error', 
-        message: 'Error al enviar el mensaje. Por favor, intenta nuevamente.' 
-      });
+    } else {
+      throw new Error(data.error || 'Error al enviar el mensaje');
     }
-  };
+  } catch (error) {
+    console.error('Error:', error);
+    setFormStatus({ 
+      type: 'error', 
+      message: 'Error al enviar el mensaje. Por favor, intenta nuevamente.' 
+    });
+  }
+};
 
   const contactInfo = [
     {
