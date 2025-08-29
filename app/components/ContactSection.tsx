@@ -58,7 +58,7 @@ const ContactSection: React.FC = () => {
     }));
   };
 
-// En ContactSection.tsx - actualizar solo la función handleSubmit
+// conectando api con handle
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setFormStatus({ type: 'loading', message: 'Enviando mensaje...' });
