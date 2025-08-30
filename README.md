@@ -53,8 +53,8 @@ Un portfolio web moderno y dinámico construido con Next.js 14, React 18 y TypeS
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/ChristianTurin/portfolio-web.git
-cd portfolio-web
+git clone https://github.com/ChristianTurin/portfolio.git
+cd portfolio
 ```
 
 ### 2. Instalar dependencias
@@ -272,6 +272,6 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 **⭐ ¡Dale una estrella si te gustó el proyecto! ⭐**
 
-[Demo en Vivo](https://tu-portfolio.vercel.app) • [Reportar Bug](https://github.com/ChristianTurin/portfolio-web/issues) • [Solicitar Feature](https://github.com/ChristianTurin/portfolio-web/issues)
+[Demo en Vivo](https://kaiserdevs.com) • [Reportar Bug](https://github.com/ChristianTurin/portfolio/issues) • [Solicitar Feature](https://github.com/ChristianTurin/portfolio/issues)
 
 </div>
