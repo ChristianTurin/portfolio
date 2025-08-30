@@ -256,7 +256,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 **Christian Turin**
 - GitHub: [@ChristianTurin](https://github.com/ChristianTurin)
 - LinkedIn: [Christian Turin](https://linkedin.com/in/christian-turin-49186b2b5)
-- Email: iiuknown@gmail.com
+- Email: iiuknown56ii@gmail.com
 - WhatsApp: [+51 947 478 972](https://wa.me/51947478972)
 
 ## 🙏 Agradecimientos
