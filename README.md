@@ -2,7 +2,7 @@
 
 Un portfolio web moderno y dinámico construido con Next.js 14, React 18 y TypeScript, diseñado para mostrar proyectos y habilidades de desarrollo full-stack de manera profesional e interactiva.
 
-![Portfolio Preview](./public/portfolio-preview.png)
+![Portfolio Preview](./public/images/projects/portfolio.png)
 
 ## ✨ Características Principales
 
