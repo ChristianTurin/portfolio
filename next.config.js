@@ -1,9 +1,10 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  poweredByHeader: false,
-  generateEtags: false,
-  experimental: {
-    serverComponentsExternalPackages: ['nodemailer']
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
   }
 }
 

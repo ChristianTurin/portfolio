@@ -2,7 +2,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Mail, Linkedin, Phone, MapPin, Send, CheckCircle, AlertCircle, Calendar, Clock, Globe } from 'lucide-react';
+import { Mail, Linkedin, Send, CheckCircle, AlertCircle, Calendar, Clock, Globe } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import AnimatedDiv from './AnimatedDiv';
 
 interface FormData {
@@ -58,23 +59,28 @@ const ContactSection: React.FC = () => {
     }));
   };
 
-// conectando api con handle
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setFormStatus({ type: 'loading', message: 'Enviando mensaje...' });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus({ type: 'loading', message: 'Enviando mensaje...' });
 
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        budget: formData.budget || 'No especificado',
+        timeline: formData.timeline || 'No especificado',
+        to_email: 'iiuknown56ii@gmail.com'
+      };
 
-    const data = await response.json();
+      await emailjs.send(
+        'YOUR_SERVICE_ID',     // Reemplaza con tu Service ID
+        'YOUR_TEMPLATE_ID',    // Reemplaza con tu Template ID  
+        templateParams,
+        'YOUR_PUBLIC_KEY'      // Reemplaza con tu Public Key
+      );
 
-    if (response.ok) {
       setFormStatus({ 
         type: 'success', 
         message: '¡Mensaje enviado correctamente! Te responderé dentro de 24 horas.' 
@@ -89,17 +95,14 @@ const handleSubmit = async (e: React.FormEvent) => {
         budget: '',
         timeline: ''
       });
-    } else {
-      throw new Error(data.error || 'Error al enviar el mensaje');
+    } catch (error) {
+      console.error('Error:', error);
+      setFormStatus({ 
+        type: 'error', 
+        message: 'Error al enviar el mensaje. Por favor, intenta nuevamente.' 
+      });
     }
-  } catch (error) {
-    console.error('Error:', error);
-    setFormStatus({ 
-      type: 'error', 
-      message: 'Error al enviar el mensaje. Por favor, intenta nuevamente.' 
-    });
-  }
-};
+  };
 
   const contactInfo = [
     {

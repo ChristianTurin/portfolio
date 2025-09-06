@@ -9,7 +9,7 @@ export const projects: Project[] = [
     duration: "React, Node.js, Next.js, Git, GitHub",
     image: "/images/projects/portfolio.png", // ← Cambio aquí
     description: "Portafolio personal profesional",
-    github: "#",
+    github: "https://github.com/ChristianTurin/portfolio",
     demo: "https://kaiserdevs.com/"
   },
   {
